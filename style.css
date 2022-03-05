@@ -1,0 +1,91 @@
+/*-----------Button Animation and Hover-----------*/
+#sideBarButton:hover {
+	animation-name: bounceAlpha;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+@keyframes bounceAlpha {
+	0% {opacity: 1; transform: translateX(0px) scale(1);}
+	25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+	26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+	55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+#imas {
+	position: absolute;
+	width: 25px;
+	height: 20px;
+	top: 10px;
+	left: 10px;
+}
+
+#imas:hover{
+	animation-name: bounceAlpha;
+	animation-duration: 0.5s;
+}
+
+
+/*-----------SideBar-----------*/
+#sideBarButton{
+	border-radius: 50%;
+	border: none;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	top: 5px;
+	left: 5px;
+	z-index: 2;
+	/*box-shadow: 20px 5px 60px 0.1px black;*/
+	background: linear-gradient(45deg, rgba(0, 255, 179, 0.75), rgba(0, 183, 255, 0.75));
+}
+#sideBarButton:focus {
+	animation-name: sideBarMove;
+	animation-duration: 0s;
+}
+
+
+
+@keyframes sideBarMove {
+	50% {
+		height: 1080px;
+		width: 125px;
+		background: black;
+
+	}
+	100% {
+		height: 1080px;
+		width: 250px;
+	}
+}
+
+
+
+/*-----------Body Background-----------*/
+.firstSection {
+	background: linear-gradient(35deg, #9effff, #fca4a4);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	width: 1920px;
+	height: 1080px;
+}
+
+/*-----------Body-----------*/
+.wip {
+	margin: auto;
+	text-align: center;
+}
+
+.box {
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+
+	transform: translate(-50%, -50%);
+	margin: auto;
+	border: 2px solid white;
+
+	padding: 10px;
+}
