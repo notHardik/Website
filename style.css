@@ -26,9 +26,11 @@
 }
 
 
+
 /*-----------SideBar-----------*/
 #sideBarButton{
 	border-radius: 50%;
+	opacity: 60%;
 	border: none;
 	position: fixed;
 	width: 40px;
@@ -38,27 +40,25 @@
 	z-index: 2;
 	/*box-shadow: 20px 5px 60px 0.1px black;*/
 	background: linear-gradient(45deg, rgba(0, 255, 179, 0.75), rgba(0, 183, 255, 0.75));
+	transition: left 1s;
 }
+
 #sideBarButton:focus {
 	animation-name: sideBarMove;
-	animation-duration: 0s;
+	animation-duration: 1sec;
+	left: 250px;
+
 }
 
 
-
-@keyframes sideBarMove {
-	50% {
-		height: 1080px;
-		width: 125px;
-		background: black;
-
-	}
-	100% {
-		height: 1080px;
-		width: 250px;
-	}
+#navigation {
+	opacity: 0%;
+	width: 200px;
+	height: 1080px;
+	background-color: black;
+	transition: left 2s;
+	left: 200px;
 }
-
 
 
 /*-----------Body Background-----------*/
@@ -76,6 +76,7 @@
 .wip {
 	margin: auto;
 	text-align: center;
+	font-family: monospace;
 }
 
 .box {
