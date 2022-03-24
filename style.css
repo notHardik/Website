@@ -24,8 +24,9 @@
 	position: fixed;
 	transform: translate(-50%);
 	top: 120px;
-	font-family: 'Bebas Neue', cursive;
-	font-size: 20px;
+	font-family: monospace, cursive;
+	font-size: 16px;
+	text-align: center;
 }
 
 /* Tabs */
@@ -53,6 +54,10 @@
 	margin: 25px;
 	animation-fill-mode:backwards;
 
+}
+
+#feedbackDarkButton {
+	margin-top: 75px;
 }
 
 button, button::after {
@@ -144,7 +149,7 @@ button, button::after {
   }
 
 /*-----------Body-----------*/
-/* .wip {
+.wip {
 	margin: auto;
 	text-align: center;
 	font-family: monospace;
@@ -160,7 +165,7 @@ button, button::after {
 	border: 2px solid white;
 
 	padding: 10px;
-} */
+}
 
 /*-----------Links-----------*/
 .borderGra {
