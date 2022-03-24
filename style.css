@@ -1,5 +1,5 @@
 /*-----------Button Animation and Hover-----------*/
-#sideBarButton:hover {
+/* #sideBarButton:hover {
 	animation-name: bounceAlpha;
 	animation-fill-mode: forwards;
 	cursor: pointer;
@@ -39,7 +39,7 @@
 
 
 
-/*-----------SideBar-----------*/
+
 #sideBarButton{
 	border-radius: 50%;
 	opacity: 60%;
@@ -50,15 +50,11 @@
 	top: 5px;
 	left: 5px;
 	z-index: 2;
-	/*box-shadow: 20px 5px 60px 0.1px black;*/
 	background: linear-gradient(45deg, rgba(0, 255, 179, 0.75), rgba(107, 204, 241, 0.75));
 	transition: left 1s;
 }
 
 #sideBarButton:focus {
-	animation-name: sideBarMove;
-	animation-duration: 1sec;
-	left: 250px;
 
 }
 
@@ -70,7 +66,7 @@
 	background-color: black;
 	transition: left 2s;
 	left: 200px;
-}
+} */
 
 
 /*-----------Body Background-----------*/
@@ -82,6 +78,12 @@
 	z-index: -1;
 	width: 100%;
 	height: 100%;
+}
+
+#profilePicture img{
+	border-radius: 50px;
+	width: 50px;
+	height: 50px;
 }
 
 /*-----------Body-----------*/
@@ -126,11 +128,19 @@
 	
 }
 
-#feedback img {
+#twitter img {
 	width: 25px;
 	height: 25px;
 }
 
+#credit{
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%);
+	position: fixed;
+	font-family: monospace;
+	font-size: 12px;
+}
 /*-----------Suggestions-----------*/
 #suggestion {
 	position: fixed;
@@ -187,14 +197,19 @@
 		box-shadow: 2px 5px 6px 0.1px black;
 	}
 }
-/*
-#nameText {
-	display: flex;
-	left: 50%;
-	transform: translate(-50%, -50%);
+
+#nameText { 
 	position: absolute;
 	border: 1px solid black;
 	background-color: #ebeebe;
-	float: left;
+	border: none;
+	border-radius: 15px;
 }
-*/
+
+#emailText { 
+	position: absolute;
+	border: 1px solid black;
+	background-color: #ebeebe;
+	border: none;
+	border-radius: 15px;
+}

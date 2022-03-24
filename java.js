@@ -1,17 +1,6 @@
 
-// Get the video
-    var video = document.getElementById("video");
-
-// Get the button
-var btn = document.getElementById("myBtn");
-
-// Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
+const socialMedia = [
+    {socialName : "Twitter", href : "logo\twitter.svg"}
+    {socialName : "GitHub", href : "logo\github.png"}
+    {socialName : "LinkedIn", href : "logo\inLogo.png"}
+];
