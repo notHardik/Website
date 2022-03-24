@@ -7,6 +7,7 @@ const socialMedia = [
 
 // document.getElementById("darmode").onclick = function(){darkMode()};
 
+
 function darkMode() {
     var element = document.getElementById("section");
     var textName = document.getElementById("darkmode");

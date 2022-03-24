@@ -253,6 +253,7 @@ button, button::after {
 	75% {
 		background-image: linear-gradient(to left,#fafdbc 25%, #66d7f3 75%);
 	}
+	
 	*/
 	100% {
 		background-image: linear-gradient(to right, #66d7f3 0%, #fafdbc 100%);
