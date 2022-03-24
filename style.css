@@ -71,7 +71,7 @@
 
 /*-----------Body Background-----------*/
 .firstSection {
-	background: linear-gradient(35deg, #9effff, #fca4a4);
+	background: linear-gradient(35deg, rgb(5,53,55), rgb(249,163,162));
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -95,7 +95,7 @@
 	position: fixed;
 	transform: translate(-50%);
 	top: 120px;
-	font-family: monospace;
+	font-family: 'Bebas Neue', cursive;
 	font-size: 20px;
 }
 
@@ -140,7 +140,7 @@ button, button::after {
 	outline: transparent;
 	position: relative;
   }
-  
+
   
   button::after {
 	--slice-0: inset(50% 50% 50% 50%);
