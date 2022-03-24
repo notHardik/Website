@@ -6,21 +6,26 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="firstSection"></div>
+        <div class="firstSection" id="section"></div>
         <div class="borderGra" id="suggestion">
             <p>Enter in any feedback regarding this website</p>
             <div id="form">
                 <form>
-                    <input type="text" placeholder="Name" required id="nameText"><br>
+                    <!-- <input type="text" placeholder="Name" required id="nameText"><br>
                     <input type="text" placeholder="Email" required id="emailText"><br>
                     <label><input type="radio" value="yes" name="emailThem">Yes</label>
                     <label><input type="radio" value="no" name="emailThem" checked required>No</label><br>
                     <button id="submitFeedback" type="submit">Submit</button><br>
-                    <button id="submitFeedback" type="reset">Reset</button>
+                    <button id="submitFeedback" type="reset">Reset</button> -->
                 </form>
-                
+            </div>
+            <div class="tabs">
+                <button id="darkmode" onclick="darkMode()">LIGHT MODE</button>
+                <script src="java.js"></script>
             </div>
         </div>
         
+        
+
     </body>
 </html>

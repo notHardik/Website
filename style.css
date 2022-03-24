@@ -1,74 +1,3 @@
-/*-----------Button Animation and Hover-----------*/
-/* #sideBarButton:hover {
-	animation-name: bounceAlpha;
-	animation-fill-mode: forwards;
-	cursor: pointer;
-}
-
-@keyframes bounceAlpha {
-	0% {
-		opacity: 1; 
-		transform: translateX(0px) scale(1);
-	}
-	25%{
-		opacity: 0; 
-		transform:translateX(10px) scale(0.9);
-	}
-	26%{
-		opacity: 0; 
-		transform:translateX(-10px) scale(0.9);
-	}
-	55% {
-		opacity: 1; 
-		transform: translateX(0px) scale(1);
-	}
-}
-
-#imas {
-	position: absolute;
-	width: 25px;
-	height: 20px;
-	top: 10px;
-	left: 10px;
-}
-
-#imas:hover{
-	animation-name: bounceAlpha;
-	animation-duration: 0.5s;
-}
-
-
-
-
-#sideBarButton{
-	border-radius: 50%;
-	opacity: 60%;
-	border: none;
-	position: fixed;
-	width: 40px;
-	height: 40px;
-	top: 5px;
-	left: 5px;
-	z-index: 2;
-	background: linear-gradient(45deg, rgba(0, 255, 179, 0.75), rgba(107, 204, 241, 0.75));
-	transition: left 1s;
-}
-
-#sideBarButton:focus {
-
-}
-
-
-#navigation {
-	opacity: 0%;
-	width: 200px;
-	height: 1080px;
-	background-color: black;
-	transition: left 2s;
-	left: 200px;
-} */
-
-
 /*-----------Body Background-----------*/
 .firstSection {
 	background: linear-gradient(35deg, rgb(5,53,55), rgb(249,163,162));
@@ -101,7 +30,7 @@
 
 /* Tabs */
 
-#tabs{
+.tabs{
 	position: fixed;
   	top: 50%;
   	left: 50%;

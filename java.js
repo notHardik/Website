@@ -11,7 +11,7 @@ function darkMode() {
     var element = document.getElementById("section");
     var textName = document.getElementById("darkmode");
     
-    if(textName.innerText == "DARK MODE")
+    if(textName.innerHTML == "DARK MODE")
     {
         textName.innerHTML= "LIGHT MODE";
         element.style.background = "linear-gradient(35deg, rgb(5,53,55), rgb(249,163,162))";
