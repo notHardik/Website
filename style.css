@@ -58,7 +58,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     color: #320B1F;
     background-color: white;
-    /*display: none*/
+    display: none
     display: block;
     margin: 20px;
     transition-duration: 0.2s;
