@@ -1,5 +1,9 @@
+@font-face {
+    font-family: 'thermal';
+    src: url(font/MerchantCopy-GOXq.ttf);
+}
+
 body {
-    background-color: #112;
     overflow: hidden;
 }
 /*Thermal font*/
@@ -9,74 +13,143 @@ body {
     height: 100vh;
     margin: 0px;
     top: 0px; left: 0px;
-    position: fixed;
-    animation-duration: 5000s;
-    animation-name: rotateIt;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;    
+    position: fixed; 
+    z-index: 0;
 }
-/*
-@keyframes rotateIt {
-  from {
-    transform: rotate(0deg);
-  }
-  
-  to{
-    transform: rotate(1080deg);
-  }
+
+.main {
+    background-color: #112;
+    display: flex;
+    justify-content: center;
+    top: 0px; left: 0px;
 }
-*/
 
 
-#sideRibbonCollapsed{
-    width: 40px;
-    height: 50px;
-    top: -20px;
+.button{
+    display: flex;
+    width: 100px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFDE66;
+    border: 2px black;
+    box-shadow: 10px 10px; 
+    /* display: none; */
+}
+
+.button:hover{
+    background-color: #c2ab5a;
+    transition: ease; transition-duration: .25s;
+}
+
+.box{
+    width: 100vw;
+    height: 5vh;
+    background-color: 112;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    top: 0px; left: 0px;
 }
 
-#sideRibbonCollapsed svg {
-    margin: 0px;
-    padding: 0px;
-}
-
-#sideRibbonCollapsed:hover{
-    transition: 200ms ease;
-    filter: grayscale(100%) opacity(0.7);
-}
-
-
-#sideRibbonExtended {
-    height: 100vh;
-    width: 200px;
-    background-color: white;
-    display: none;
-}
-
-.ribbonButtons {
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    color: #320B1F;
-    background-color: white;
-    display: none
-    display: block;
-    margin: 20px;
-    transition-duration: 0.2s;
-    position: sticky;
-    left: 50%;
-    border-color: black;
-}
-
-.ribbonButtons:hover{
-    color:white;
-}
 
 #credit{
 	bottom: 0px;
 	left: 50%;
 	transform: translate(-50%);
 	position: fixed;
-	font-family: monospace;
-	font-size: 12px;
+	font-family: 'thermal';
+	font-size: 17px;
     color: white;
+}
+
+
+a:link { text-decoration: none; color: white;}
+
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
+/* Country CSS */
+
+.mainContent{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;left: 0px;
+    background-color: #1e1e28;
+}
+
+.mainBox {
+    height: 70vh;
+    width: 35vw;
+    background-color: #1e1e28;
+    /* box-shadow: 10px 10px black; */
+}
+
+.map{
+    /* outline: 1px solid red; */
+    position: relative;
+    height: 87%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+#worldSize
+{
+    width: 100%;
+}
+
+.btmIcons {
+    display: flex;
+    position: relative;
+    height: 13%;
+    width: 100%;
+    top: 0px; left: 0px;
+    /* outline: 1px solid red; */
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid white;
+    height: 70%; width: 50%;
+}
+
+#inputCountry{
+    background-color: #1e1e28;
+    border: 0px;
+    color: white;
+    text-align: center;
+    caret-color: #6F6F76;
+    
+}
+#inputCountry::placeholder{
+    
+}
+
+#inputCountry:focus{
+    outline: none;
+}
+
+#submitInput{
+    background-color: #1e1e28;
+    border: 0px;
+    height: 50%;
+    color: white;
+    margin: 20px;
+    display: none;
 }

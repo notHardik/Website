@@ -1,3 +1,7 @@
+let down = false;
+let rightOrLeft = false; //Left = False, Right = True
+let pos=95;
+
 //Get context and screen size;
 var ctx = stars1.getContext("2d");
 var W = window.innerWidth;
@@ -47,25 +51,9 @@ function animate() {
         ctx.arc(x, y, r, 0, end);
         ctx.fill();
     }
-    /*
-    for (let j = 0; j < 200; j++) {
-        randomArray = Math.floor(Math.random()*numStars+1);
-        console.log(randomArray);
-        starArrayX.splice(randomArray, 1);
-        starArrayY.splice(randomArray, 1);
-        starArrayR.splice(randomArray, 1);
-        starArrayEnd.splice(randomArray, 1);
-        setTimeout(disappear(starArrayX[randomArray], starArrayY[randomArray],starArrayR[randomArray],starArrayEnd[randomArray]),1500);
-        clearTimeout();
-    }*/
 }
-
 
 animate();
 
-document.getElementById("sideRibbonCollapsed").onclick = function(){upDown()};
+window.onresize = function(){location.reload();}
 
-function upDown()
-{
-    document.getElementById("sideRibbonCollapsed").style.transform = "translateY(100px)";
-}
