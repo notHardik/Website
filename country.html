@@ -8,19 +8,26 @@
     <title>Countryle</title>
 </head>
 <body>  
-    <script src="country.js"></script>
+    <script src="country.js" defer></script>
     <div class = "mainContent">
         <div class="mainBox">
+            <div class="topButton">
+                <button id="HowTo">
+                    How to Play
+                </button>
+            </div>
             <div class="map">
                 <img src="map.png" id="worldSize">
+                <div id="guess">
+
+                </div>
             </div>
             <div class="btmIcons">
                 <div class="input">
-                    <input list="text" id="inputCountry" placeholder="Enter Country">
-                    <datalist id="text">
-                        <option>India</option>
+                    <input type="text" list="json-datalist" id="inputCountry" placeholder="Select Country">
+                    <datalist id="json-datalist">
                     </datalist>
-                    <input type="submit" id="submitInput" value="Enter">
+                    <input type="submit" id="submitInput" value="Enter" >
                 </div>
             </div>
         </div>

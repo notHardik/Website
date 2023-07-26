@@ -33,6 +33,7 @@ body {
     justify-content: center;
     background-color: #FFDE66;
     border: 2px black;
+    border-radius: 10px;
     box-shadow: 10px 10px; 
     /* display: none; */
 }
@@ -94,6 +95,24 @@ a:active { text-decoration: none; }
     /* box-shadow: 10px 10px black; */
 }
 
+.topButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#HowTo {
+    border: 1px dashed white;
+    background-color: #1e1e28;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+}
+
+#HowTo:hover {
+    background-color: #444458;
+}
+
 .map{
     /* outline: 1px solid red; */
     position: relative;
@@ -103,11 +122,20 @@ a:active { text-decoration: none; }
     left: 0px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #worldSize
 {
     width: 100%;
+}
+
+#guess{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    background-color: #1e1e2883;
+    outline: 1px solid red;
 }
 
 .btmIcons {
@@ -135,6 +163,7 @@ a:active { text-decoration: none; }
     color: white;
     text-align: center;
     caret-color: #6F6F76;
+    font-family: monospace;
     
 }
 #inputCountry::placeholder{
@@ -146,10 +175,15 @@ a:active { text-decoration: none; }
 }
 
 #submitInput{
-    background-color: #1e1e28;
-    border: 0px;
+    background-color: white;
+    border: 1px  white;
     height: 50%;
-    color: white;
+    color:  #1e1e28;
     margin: 20px;
-    display: none;
+    font-family: monospace;
+}
+
+#submitInput:hover
+{
+    background-color: #444458;
 }

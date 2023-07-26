@@ -57,3 +57,9 @@ animate();
 
 window.onresize = function(){location.reload();}
 
+window.onload = function () {
+    document.getElementById("github").onclick = function() {
+        console.log("hit");
+        window.open("https://github.com/notHardik/Website", "_blank")
+    };  
+}
