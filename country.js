@@ -1,7 +1,7 @@
 var dataList = document.getElementById('json-datalist');
 var input = document.getElementById('inputCountry');
-var guess = document.getElementById('guess');
 var submit = document.getElementById('submitInput');
+var guessList = document.getElementById('guessList');
 var matchCountry = false;
 var targetCountry = "";
 var countGuess = 0;
@@ -9,16 +9,15 @@ var countGuess = 0;
 input.onchange = function(){isTextSelected(document.getElementById("inputCountry").value)}
 submit.onclick = function(){submitAnswer(input.value)}
 
-// Set up and make the request.
+// Set up and make the request to get random country on every Refresh
 window.onload = function() {
     go(items);
     submit.style.display = "none";
-    guess.style.display = "none";
     targetCountry = items[Math.floor(Math.random() * (228 - 1 + 1) + 1)].Country;
     console.log(targetCountry)
 }
 
-//Displays the sibmit button if there is a country select
+//Displays the submit button if there is a country select
 function isTextSelected(inputValue)
 {
   checkCountry(items, inputValue)
@@ -52,20 +51,67 @@ function checkCountry(items, inputValue) {
   return false;
 }
 
+function population(country)
+{
+  var returnThing; 
+  items.forEach(function(item)
+  {
+    if(item.Country === country)
+    {
+      returnThing = Number(item.Population);
+    }
+  })
+  return returnThing;
+}
+
+function region(country)
+{
+  var returnThing;
+  items.forEach(function(item)
+  {
+    if(item.Country === country)
+    {
+      returnThing =  item.Region;
+    }
+  })
+  return returnThing;
+}
+
+
 //When clicking the submit button check if its right
 function submitAnswer(inputValue)
 {
   countGuess++;
   if(countGuess > 0)
   {
-    guess.style.removeProperty("display");
   }
   if(inputValue == targetCountry)
   {
     console.log("right")
   }else
   {
-    console.log("wrong")
+    var li = document.createElement("li");
+    var text = "";
+    if(parseInt(population(targetCountry), 10) < parseInt(population(inputValue), 10))
+    {
+      text += inputValue + " | Population: ↓ | ";
+    }
+    if(parseInt(population(targetCountry), 10) > parseInt(population(inputValue), 10))
+    {
+      text += inputValue + " | Population: ↑ | ";
+    }
+    if(region(targetCountry) != region(inputValue))
+    {
+      text += "Continent: Incorrect";
+    }else
+    {
+      text += "Continent: " + inputValue.Region;
+    }
+
+    console.log("wrong");
+
+    li.appendChild(document.createTextNode(text));
+    guessList.appendChild(li);
   }
 }
 
@@ -141,7 +187,7 @@ var items = [
       Population: 7961619
     },
     {
-      Country: "Bahamas, The",
+      Country: "The Bahamas",
       Region: "SOUTH AMERICA",
       Population: 303770
     },
@@ -296,12 +342,12 @@ var items = [
       Population: 690948
     },
     {
-      Country: "Congo, Dem. Rep.",
+      Country: "Democratic Republic of Congo",
       Region: "AFRICA",
       Population: 62660551
     },
     {
-      Country: "Congo, Repub. of the",
+      Country: "Republic of the Congo",
       Region: "AFRICA",
       Population: 3702314
     },
@@ -332,7 +378,7 @@ var items = [
     },
     {
       Country: "Cyprus",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 784301
     },
     {
@@ -392,7 +438,7 @@ var items = [
     },
     {
       Country: "Estonia",
-      Region: "BALTICS",
+      Region: "EUROPE",
       Population: 1324333
     },
     {
@@ -442,7 +488,7 @@ var items = [
     },
     {
       Country: "Gaza Strip",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 1428757
     },
     {
@@ -557,7 +603,7 @@ var items = [
     },
     {
       Country: "Iraq",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 26783383
     },
     {
@@ -572,7 +618,7 @@ var items = [
     },
     {
       Country: "Israel",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 6352117
     },
     {
@@ -597,7 +643,7 @@ var items = [
     },
     {
       Country: "Jordan",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 5906760
     },
     {
@@ -616,18 +662,18 @@ var items = [
       Population: 105432
     },
     {
-      Country: "Korea, North",
+      Country: "North Korea",
       Region: "ASIA",
       Population: 23113019
     },
     {
-      Country: "Korea, South",
+      Country: "South Korea",
       Region: "ASIA",
       Population: 48846823
     },
     {
       Country: "Kuwait",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 2418393
     },
     {
@@ -642,12 +688,12 @@ var items = [
     },
     {
       Country: "Latvia",
-      Region: "BALTICS",
+      Region: "EUROPE",
       Population: 2274735
     },
     {
       Country: "Lebanon",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 3874050
     },
     {
@@ -672,7 +718,7 @@ var items = [
     },
     {
       Country: "Lithuania",
-      Region: "BALTICS",
+      Region: "EUROPE",
       Population: 3585906
     },
     {
@@ -751,7 +797,7 @@ var items = [
       Population: 107449525
     },
     {
-      Country: "Micronesia, Fed. St.",
+      Country: "Fed. St. Micronesia",
       Region: "OCEANIA",
       Population: 108004
     },
@@ -847,7 +893,7 @@ var items = [
     },
     {
       Country: "Oman",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 3102229
     },
     {
@@ -902,7 +948,7 @@ var items = [
     },
     {
       Country: "Qatar",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 885359
     },
     {
@@ -967,7 +1013,7 @@ var items = [
     },
     {
       Country: "Saudi Arabia",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 27019731
     },
     {
@@ -1057,7 +1103,7 @@ var items = [
     },
     {
       Country: "Syria",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 18881361
     },
     {
@@ -1102,7 +1148,7 @@ var items = [
     },
     {
       Country: "Turkey",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 70413958
     },
     {
@@ -1132,7 +1178,7 @@ var items = [
     },
     {
       Country: "United Arab Emirates",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 2602713
     },
     {
@@ -1182,7 +1228,7 @@ var items = [
     },
     {
       Country: "West Bank",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 2460492
     },
     {
@@ -1192,7 +1238,7 @@ var items = [
     },
     {
       Country: "Yemen",
-      Region: "NEAR EAST",
+      Region: "ASIA",
       Population: 21456188
     },
     {

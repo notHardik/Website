@@ -13,9 +13,12 @@
         <div class="leftHalf">
             <div class="topButton">
                 <p id="HowTo">
-                    How to Play
-                    <ul style="font-size: 20px;">
+                    <u>How to Play</u>
+                    <ul style="font-size: 25px;">
                         <li>Guess the hidden country. Use the clues to guess it with the fewest attemps possible</li>
+                        <li>Each incorrect answer will provide you clues for your next guess</li>
+                        <li>Target country changes after each reload. Working on implementing</li>
+                        <li>↑ means the target country has a higher population; vice versa for ↓</li>
                     </ul>
                 </p>
             </div>
@@ -35,10 +38,8 @@
             <div class="answers">
                 <p><u>Guess</u></p>
                 <div id="listedAnswer">
-                    <ol style="color: white; font-size: 17.5px;">
-                        <li>sds</li>
-                        <li>sds</li>
-                        <li>sds</li>
+                    <ol style="color: white; font-size: 17.5px;" id="guessList">
+                        
                     </ol>
                 </div>
             </div>

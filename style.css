@@ -70,8 +70,6 @@ a:active { text-decoration: none; }
 }
 
 .leftHalf{
-    top: 0px;
-    left: 0px;
     height: 100vh;
     width: 20vw;
     display: flex;
@@ -101,12 +99,13 @@ a:active { text-decoration: none; }
 }
 
 #HowTo {
-    background-color: transparent;
-    color: white;
-    font-family: thermal;
     font-size: 30px;
-    border: none;
     position: relative;
+    text-align: center;
+}
+
+.topButton li {
+    margin: 10px;
 }
 
 .answers{
@@ -126,9 +125,6 @@ a:active { text-decoration: none; }
     
 }
 
-#HowTo:hover {
-    background-color: #444458;
-}
 
 .middleHalf{
     position: relative;
