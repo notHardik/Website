@@ -10,23 +10,11 @@ var H = window.innerHeight;
 //Set Canvas and Background Color;
 stars1.width = W;
 stars1.height = H;
-ctx.fillStyle = "#112";
+ctx.fillStyle = "#DDD0C8";
 ctx.fillRect(0, 0, W, H+1);
 
-//Glow effect;
-ctx.shadowBlur = 10;
-ctx.shadowColor = "white";
 
-function disappear(x,y,r,end)
-{
-    ctx.beginPath();
-    ctx.shadowBlur = 0;
-    ctx.shadowColor = "#112";
-    ctx.fillStyle = "#112";
-    ctx.arc(x,y,r,0,end);
-    ctx.fill();
-}
-
+/*
 function animate() {
     const starArrayX = [];
     const starArrayY = [];
@@ -54,7 +42,7 @@ function animate() {
 }
 
 animate();
-
+*/
 window.onresize = function(){location.reload();}
 
 window.onload = function () {

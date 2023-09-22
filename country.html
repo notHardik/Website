@@ -10,24 +10,36 @@
 <body>  
     <script src="country.js" defer></script>
     <div class = "mainContent">
-        <div class="mainBox">
+        <div class="leftHalf">
             <div class="topButton">
-                <button id="HowTo">
+                <p id="HowTo">
                     How to Play
-                </button>
+                    <ul style="font-size: 20px;">
+                        <li>Guess the hidden country. Use the clues to guess it with the fewest attemps possible</li>
+                    </ul>
+                </p>
             </div>
-            <div class="map">
-                <img src="map.png" id="worldSize">
-                <div id="guess">
-
-                </div>
-            </div>
+        </div>
+        <div class="middleHalf">
+            <img src="map.png" id="worldSize">
             <div class="btmIcons">
                 <div class="input">
                     <input type="text" list="json-datalist" id="inputCountry" placeholder="Select Country">
                     <datalist id="json-datalist">
                     </datalist>
                     <input type="submit" id="submitInput" value="Enter" >
+                </div>
+            </div>
+        </div>
+        <div class="rightHalf">
+            <div class="answers">
+                <p><u>Guess</u></p>
+                <div id="listedAnswer">
+                    <ol style="color: white; font-size: 17.5px;">
+                        <li>sds</li>
+                        <li>sds</li>
+                        <li>sds</li>
+                    </ol>
                 </div>
             </div>
         </div>
