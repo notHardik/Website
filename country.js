@@ -87,7 +87,10 @@ function submitAnswer(inputValue)
   }
   if(inputValue == targetCountry)
   {
-    console.log("right")
+    var li = document.createElement("li");
+    var text = "good shit bro. Reload to retart"
+    li.appendChild(document.createTextNode(text));
+    guessList.appendChild(li);
   }else
   {
     var li = document.createElement("li");
@@ -107,9 +110,6 @@ function submitAnswer(inputValue)
     {
       text += "Continent: " + region(inputValue);
     }
-
-    console.log("wrong");
-
     li.appendChild(document.createTextNode(text));
     guessList.appendChild(li);
   }
@@ -118,17 +118,17 @@ function submitAnswer(inputValue)
 var items = [
     {
       Country: "Afghanistan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 31056997
     },
     {
       Country: "Albania",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 3581655
     },
     {
       Country: "Algeria",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 32930091
     },
     {
@@ -138,27 +138,27 @@ var items = [
     },
     {
       Country: "Andorra",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 71201
     },
     {
       Country: "Angola",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 12127071
     },
     {
       Country: "Anguilla",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 13477
     },
     {
       Country: "Antigua & Barbuda",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 69108
     },
     {
       Country: "Argentina",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 39921833
     },
     {
@@ -168,7 +168,7 @@ var items = [
     },
     {
       Country: "Aruba",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 71891
     },
     {
@@ -178,177 +178,177 @@ var items = [
     },
     {
       Country: "Austria",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 8192880
     },
     {
       Country: "Azerbaijan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 7961619
     },
     {
       Country: "The Bahamas",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 303770
     },
     {
       Country: "Bahrain",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 698585
     },
     {
       Country: "Bangladesh",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 147365352
     },
     {
       Country: "Barbados",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 279912
     },
     {
       Country: "Belarus",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 10293011
     },
     {
       Country: "Belgium",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 10379067
     },
     {
       Country: "Belize",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 287730
     },
     {
       Country: "Benin",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 7862944
     },
     {
       Country: "Bermuda",
-      Region: "NORTHERN AMERICA",
+      Region: "North America",
       Population: 65773
     },
     {
       Country: "Bhutan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 2279723
     },
     {
       Country: "Bolivia",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 8989046
     },
     {
       Country: "Bosnia & Herzegovina",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4498976
     },
     {
       Country: "Botswana",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1639833
     },
     {
       Country: "Brazil",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 188078227
     },
     {
       Country: "British Virgin Is.",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 23098
     },
     {
       Country: "Brunei",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 379444
     },
     {
       Country: "Bulgaria",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 7385367
     },
     {
       Country: "Burkina Faso",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 13902972
     },
     {
       Country: "Burma",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 47382633
     },
     {
       Country: "Burundi",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 8090068
     },
     {
       Country: "Cambodia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 13881427
     },
     {
       Country: "Cameroon",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 17340702
     },
     {
       Country: "Canada",
-      Region: "NORTHERN AMERICA",
+      Region: "North America",
       Population: 33098932
     },
     {
       Country: "Cape Verde",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 420979
     },
     {
       Country: "Cayman Islands",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 45436
     },
     {
       Country: "Central African Rep.",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 4303356
     },
     {
       Country: "Chad",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 9944201
     },
     {
       Country: "Chile",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 16134219
     },
     {
       Country: "China",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 1313973713
     },
     {
       Country: "Colombia",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 43593035
     },
     {
       Country: "Comoros",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 690948
     },
     {
       Country: "Democratic Republic of Congo",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 62660551
     },
     {
       Country: "Republic of the Congo",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 3702314
     },
     {
@@ -358,97 +358,97 @@ var items = [
     },
     {
       Country: "Costa Rica",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 4075261
     },
     {
       Country: "Cote d'Ivoire",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 17654843
     },
     {
       Country: "Croatia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4494749
     },
     {
       Country: "Cuba",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 11382820
     },
     {
       Country: "Cyprus",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 784301
     },
     {
       Country: "Czech Republic",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 10235455
     },
     {
       Country: "Denmark",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 5450661
     },
     {
       Country: "Djibouti",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 486530
     },
     {
       Country: "Dominica",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 68910
     },
     {
       Country: "Dominican Republic",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 9183984
     },
     {
       Country: "East Timor",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 1062777
     },
     {
       Country: "Ecuador",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 13547510
     },
     {
       Country: "Egypt",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 78887007
     },
     {
       Country: "El Salvador",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 6822378
     },
     {
       Country: "Equatorial Guinea",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 540109
     },
     {
       Country: "Eritrea",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 4786994
     },
     {
       Country: "Estonia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 1324333
     },
     {
       Country: "Ethiopia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 74777981
     },
     {
       Country: "Faroe Islands",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 47246
     },
     {
@@ -458,17 +458,17 @@ var items = [
     },
     {
       Country: "Finland",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 5231372
     },
     {
       Country: "France",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 60876136
     },
     {
       Country: "French Guiana",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 199509
     },
     {
@@ -478,57 +478,57 @@ var items = [
     },
     {
       Country: "Gabon",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1424906
     },
     {
       Country: "Gambia, The",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1641564
     },
     {
       Country: "Gaza Strip",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 1428757
     },
     {
       Country: "Georgia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4661473
     },
     {
       Country: "Germany",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 82422299
     },
     {
       Country: "Ghana",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 22409572
     },
     {
       Country: "Gibraltar",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 27928
     },
     {
       Country: "Greece",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 10688058
     },
     {
       Country: "Greenland",
-      Region: "NORTHERN AMERICA",
+      Region: "North America",
       Population: 56361
     },
     {
       Country: "Grenada",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 89703
     },
     {
       Country: "Guadeloupe",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 452776
     },
     {
@@ -538,122 +538,122 @@ var items = [
     },
     {
       Country: "Guatemala",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 12293545
     },
     {
       Country: "Guernsey",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 65409
     },
     {
       Country: "Guinea",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 9690222
     },
     {
       Country: "Guinea-Bissau",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1442029
     },
     {
       Country: "Guyana",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 767245
     },
     {
       Country: "Haiti",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 8308504
     },
     {
       Country: "Honduras",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 7326496
     },
     {
       Country: "Hong Kong",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 6940432
     },
     {
       Country: "Hungary",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 9981334
     },
     {
       Country: "Iceland",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 299388
     },
     {
       Country: "India",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 1095351995
     },
     {
       Country: "Indonesia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 245452739
     },
     {
       Country: "Iran",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 68688433
     },
     {
       Country: "Iraq",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 26783383
     },
     {
       Country: "Ireland",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4062235
     },
     {
       Country: "Isle of Man",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 75441
     },
     {
       Country: "Israel",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 6352117
     },
     {
       Country: "Italy",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 58133509
     },
     {
       Country: "Jamaica",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 2758124
     },
     {
       Country: "Japan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 127463611
     },
     {
       Country: "Jersey",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 91084
     },
     {
       Country: "Jordan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 5906760
     },
     {
       Country: "Kazakhstan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 15233244
     },
     {
       Country: "Kenya",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 34707817
     },
     {
@@ -663,107 +663,107 @@ var items = [
     },
     {
       Country: "North Korea",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 23113019
     },
     {
       Country: "South Korea",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 48846823
     },
     {
       Country: "Kuwait",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 2418393
     },
     {
       Country: "Kyrgyzstan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 5213898
     },
     {
       Country: "Laos",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 6368481
     },
     {
       Country: "Latvia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 2274735
     },
     {
       Country: "Lebanon",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 3874050
     },
     {
       Country: "Lesotho",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 2022331
     },
     {
       Country: "Liberia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 3042004
     },
     {
       Country: "Libya",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 5900754
     },
     {
       Country: "Liechtenstein",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 33987
     },
     {
       Country: "Lithuania",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 3585906
     },
     {
       Country: "Luxembourg",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 474413
     },
     {
       Country: "Macau",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 453125
     },
     {
       Country: "Macedonia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 2050554
     },
     {
       Country: "Madagascar",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 18595469
     },
     {
       Country: "Malawi",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 13013926
     },
     {
       Country: "Malaysia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 24385858
     },
     {
       Country: "Maldives",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 359008
     },
     {
       Country: "Mali",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 11716829
     },
     {
       Country: "Malta",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 400214
     },
     {
@@ -773,27 +773,27 @@ var items = [
     },
     {
       Country: "Martinique",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 436131
     },
     {
       Country: "Mauritania",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 3177388
     },
     {
       Country: "Mauritius",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1240827
     },
     {
       Country: "Mayotte",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 201234
     },
     {
       Country: "Mexico",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 107449525
     },
     {
@@ -803,37 +803,37 @@ var items = [
     },
     {
       Country: "Moldova",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4466706
     },
     {
       Country: "Monaco",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 32543
     },
     {
       Country: "Mongolia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 2832224
     },
     {
       Country: "Montserrat",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 9439
     },
     {
       Country: "Morocco",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 33241259
     },
     {
       Country: "Mozambique",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 19686505
     },
     {
       Country: "Namibia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 2044147
     },
     {
@@ -843,17 +843,17 @@ var items = [
     },
     {
       Country: "Nepal",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 28287147
     },
     {
       Country: "Netherlands",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 16491461
     },
     {
       Country: "Netherlands Antilles",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 221736
     },
     {
@@ -868,17 +868,17 @@ var items = [
     },
     {
       Country: "Nicaragua",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 5570129
     },
     {
       Country: "Niger",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 12525094
     },
     {
       Country: "Nigeria",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 131859731
     },
     {
@@ -888,17 +888,17 @@ var items = [
     },
     {
       Country: "Norway",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 4610820
     },
     {
       Country: "Oman",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 3102229
     },
     {
       Country: "Pakistan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 165803560
     },
     {
@@ -908,7 +908,7 @@ var items = [
     },
     {
       Country: "Panama",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 3191319
     },
     {
@@ -918,82 +918,82 @@ var items = [
     },
     {
       Country: "Paraguay",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 6506464
     },
     {
       Country: "Peru",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 28302603
     },
     {
       Country: "Philippines",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 89468677
     },
     {
       Country: "Poland",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 38536869
     },
     {
       Country: "Portugal",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 10605870
     },
     {
       Country: "Puerto Rico",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 3927188
     },
     {
       Country: "Qatar",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 885359
     },
     {
       Country: "Reunion",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 787584
     },
     {
       Country: "Romania",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 22303552
     },
     {
       Country: "Russia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 142893540
     },
     {
       Country: "Rwanda",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 8648248
     },
     {
       Country: "Saint Helena",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 7502
     },
     {
       Country: "Saint Kitts & Nevis",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 39129
     },
     {
       Country: "Saint Lucia",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 168458
     },
     {
       Country: "St Pierre & Miquelon",
-      Region: "NORTHERN AMERICA",
+      Region: "North America",
       Population: 7026
     },
     {
       Country: "Saint Vincent and the Grenadines",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 117848
     },
     {
@@ -1003,52 +1003,52 @@ var items = [
     },
     {
       Country: "San Marino",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 29251
     },
     {
       Country: "Sao Tome & Principe",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 193413
     },
     {
       Country: "Saudi Arabia",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 27019731
     },
     {
       Country: "Senegal",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 11987121
     },
     {
       Country: "Serbia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 9396411
     },
     {
       Country: "Seychelles",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 81541
     },
     {
       Country: "Sierra Leone",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 6005250
     },
     {
       Country: "Singapore",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 4492150
     },
     {
       Country: "Slovakia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 5439448
     },
     {
       Country: "Slovenia",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 2010347
     },
     {
@@ -1058,77 +1058,77 @@ var items = [
     },
     {
       Country: "Somalia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 8863338
     },
     {
       Country: "South Africa",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 44187637
     },
     {
       Country: "Spain",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 40397842
     },
     {
       Country: "Sri Lanka",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 20222240
     },
     {
       Country: "Sudan",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 41236378
     },
     {
       Country: "Suriname",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 439117
     },
     {
       Country: "Swaziland",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 1136334
     },
     {
       Country: "Sweden",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 9016596
     },
     {
       Country: "Switzerland",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 7523934
     },
     {
       Country: "Syria",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 18881361
     },
     {
       Country: "Taiwan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 23036087
     },
     {
       Country: "Tajikistan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 7320815
     },
     {
       Country: "Tanzania",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 37445392
     },
     {
       Country: "Thailand",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 64631595
     },
     {
       Country: "Togo",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 5548702
     },
     {
@@ -1138,27 +1138,27 @@ var items = [
     },
     {
       Country: "Trinidad & Tobago",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 1065842
     },
     {
       Country: "Tunisia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 10175014
     },
     {
       Country: "Turkey",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 70413958
     },
     {
       Country: "Turkmenistan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 5042920
     },
     {
       Country: "Turks & Caicos Is",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 21152
     },
     {
@@ -1168,37 +1168,37 @@ var items = [
     },
     {
       Country: "Uganda",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 28195754
     },
     {
       Country: "Ukraine",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 46710816
     },
     {
       Country: "United Arab Emirates",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 2602713
     },
     {
       Country: "United Kingdom",
-      Region: "EUROPE",
+      Region: "Europe",
       Population: 60609153
     },
     {
       Country: "United States",
-      Region: "NORTHERN AMERICA",
+      Region: "North America",
       Population: 298444215
     },
     {
       Country: "Uruguay",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 3431932
     },
     {
       Country: "Uzbekistan",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 27307134
     },
     {
@@ -1208,17 +1208,17 @@ var items = [
     },
     {
       Country: "Venezuela",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 25730435
     },
     {
       Country: "Vietnam",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 84402966
     },
     {
       Country: "Virgin Islands",
-      Region: "SOUTH AMERICA",
+      Region: "South America",
       Population: 108605
     },
     {
@@ -1228,27 +1228,27 @@ var items = [
     },
     {
       Country: "West Bank",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 2460492
     },
     {
       Country: "Western Sahara",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 273008
     },
     {
       Country: "Yemen",
-      Region: "ASIA",
+      Region: "Asia",
       Population: 21456188
     },
     {
       Country: "Zambia",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 11502010
     },
     {
       Country: "Zimbabwe",
-      Region: "AFRICA",
+      Region: "Africa",
       Population: 12236805
     }
   ];
