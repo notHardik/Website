@@ -105,7 +105,7 @@ function submitAnswer(inputValue)
       text += "Continent: Incorrect";
     }else
     {
-      text += "Continent: " + inputValue.Region;
+      text += "Continent: " + region(inputValue);
     }
 
     console.log("wrong");
