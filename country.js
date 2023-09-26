@@ -88,7 +88,7 @@ function submitAnswer(inputValue)
   if(inputValue == targetCountry)
   {
     var li = document.createElement("li");
-    var text = "good shit bro. Reload to retart"
+    var text = "Nice, you got it right. Reload to retart"
     li.appendChild(document.createTextNode(text));
     guessList.appendChild(li);
   }else
