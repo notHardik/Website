@@ -8,6 +8,12 @@ var countGuess = 0;
 
 input.onchange = function(){isTextSelected(document.getElementById("inputCountry").value)}
 submit.onclick = function(){submitAnswer(input.value)}
+submit.onkeydown = function(e){
+	if(e.keycode = 13)
+	{
+		submitAnswer(input.value);
+	}
+}
 
 // Set up and make the request to get random country on every Refresh
 window.onload = function() {
@@ -16,6 +22,8 @@ window.onload = function() {
     targetCountry = items[Math.floor(Math.random() * (228 - 1 + 1) + 1)].Country;
     console.log(targetCountry)
 }
+
+
 
 //Displays the submit button if there is a country select
 function isTextSelected(inputValue)
