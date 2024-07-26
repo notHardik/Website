@@ -1,16 +1,9 @@
 import './App.css'
-import { useState, useEffect, useRef} from 'react'
+import { useState, useEffect} from 'react'
 import Information from './information'
-
-import { BrowserRouter as Router,
-	Routes,
-	Route
-} from 'react-router-dom'
-import Blogs from '../pages/landingPage'
-
-import { Hexagon, TiledHexagons } from 'tiled-hexagons'
-import { VectorMap } from '@react-jvectormap/core'
-import worldMill from "@react-jvectormap/world/dist/worldMill.json";
+import { Hexagon } from 'tiled-hexagons'
+// import { VectorMap } from '@react-jvectormap/core'
+// import worldMill from "@react-jvectormap/world/dist/worldMill.json";
 import VaraText from './VaraText';
 
 export function useCountryList(){
