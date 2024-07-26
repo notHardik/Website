@@ -1,0 +1,169 @@
+.main{
+}
+
+.top--div{
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 50%;
+}
+
+.guess--box {
+  height: 30rem;
+  width: 25rem;
+  background-color: #2F2F2F;
+  /* backdrop-filter: blur(10px); */
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.guess--box::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+  background-image: conic-gradient(from var(--angle), #3494E6, #EC6EAD,#3494E6);
+  /* background-image: conic-gradient(from var(--angle), #00a8ff, #0266c8,#f4afc2, #f195ac, #b28bc0, #00a8ff); */
+
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 25px;
+  padding: 2px; /*Border radius of the border..*/
+  margin: 0px; /*Makes a box shadow behind the box*/
+  animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+.guess--box::before{
+  filter: blur(3rem);
+  /* opacity: 0.5; */
+}
+
+.information--grid{
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 65%;
+  overflow-y: scroll;
+}
+
+.fuck {
+  display: flex;
+}
+
+.fields--test{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  font-size: 0.65rem;
+  color: white;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.grid{
+  width: 20%;
+  height: 40%;
+  text-align: center;
+  padding-left: .5rem;
+  padding-right: 0rem;
+
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.field--edit{
+  font-weight: bold;
+  color: #EC6EAD;
+}
+
+.hexagon--button {
+  padding: 20px;
+}
+
+.bottom--submit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.bottomSubmit{
+  
+}
+
+.worldImage{
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.setup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.guessText{
+  border-radius: 50px;
+  height: 50%;
+  text-align: center;
+  font-family: Playwrite CU;
+  border: 0px;
+}
+
+
+.guessText::placeholder{
+  text-align: center;
+  font-family: Playwrite CU;
+  font-size: 10px;
+}
+
+.countryleText{
+  font-family: Playwrite CU, sans-serif;
+  background: linear-gradient(#01a3c4, #27f5b7);
+  background-clip: text;
+  color: transparent;
+  font-size: 1rem;
+  padding: 0px 2px;
+}
+
+.button{
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 40px;
+  background: linear-gradient(#01a3c4, #27f5b7);
+}
+
+.field--names{
+}

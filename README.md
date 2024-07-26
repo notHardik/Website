@@ -1,12 +1,8 @@
-# Website
-Personal website for me where I can test and learn new coding languages and framework. 
+# React + Vite
 
-Currently I am working on the landing page and on a geographical game involving guessing different countries.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A similar game is available online (countryle.com) and functions similaryly to what I am going to be making (with some minor tweaks)
+Currently, two official plugins are available:
 
-    * On launch, the website will pick out a random country and the user will try to guess it.
-    * If wrong, hints (population, location, continent) will show up that will compare the input and target countries. 
-        * For example: If the target country is Brazil and you entered USA, then the following hints will show up:
-            Population: Lower (with displayed number)  | Location: South (Coordiantes Probably)| Continent: North America (Colour will be Red since its wrong)
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
