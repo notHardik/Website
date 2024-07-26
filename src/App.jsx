@@ -146,7 +146,7 @@ function App() {
 			<div className="setup">
 				<div className="guess--box">
 					<div className="top--div">
-						<img className='worldImage' src="public/world.png"/>
+						<img className='worldImage' src="/world.png"/>
 						<Fields />
 						<div className="information--grid">
 							<Information hesmiphere="Northern"
