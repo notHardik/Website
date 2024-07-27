@@ -1,7 +1,13 @@
-import { useState, useEffect, useRef} from 'react'
+import {useEffect} from 'react'
 import Vara from 'vara';
+import PropTypes from 'prop-types';
 
 export default function VaraText({ text }) {
+
+  VaraText.propTypes = {
+    text: PropTypes.string
+  }
+
   useEffect(() => {
     var vara = new Vara(
       "#vara-container",

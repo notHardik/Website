@@ -5,6 +5,7 @@ import { Hexagon } from 'tiled-hexagons'
 // import { VectorMap } from '@react-jvectormap/core'
 // import worldMill from "@react-jvectormap/world/dist/worldMill.json";
 import VaraText from './VaraText';
+import { json } from 'react-router-dom';
 
 export function useCountryList(){
 	const [data, setData] = useState(null); 
@@ -25,6 +26,7 @@ function InputBox({onCountryChange}){
 	var filteredData = useCountryList()
 	filteredData = filteredData ? filteredData.filter(item => item.continents && item.continents.length > 0 && 
 		!item.continents.includes('Antarctica') && !item.continents.includes('Oceania') && item.unMember == true) : [];
+	// console.log(filteredData)
 
 	const dataListField = filteredData.map(fields =>{
 		return(<option key={fields.name.common}>{fields.name.common}</option>)
@@ -63,10 +65,9 @@ function InputBox({onCountryChange}){
 
 function Fields() {
 	const fuck = [{name: 'Name'},{name: 'Hemisphere'}, {name: 'Continent'}, {name: 'Population'}
-    , {name: 'Direction'}, {name: 'Temp.'}
-  	]
+    , {name: 'Direction'}, {name: 'Temp.'}]
 	const rowField = fuck.map(fields=> {
-		return (<p className='grid field--edit'>{fields.name}</p>)
+		return (<p className='grid field--edit' key={fields.name}>{fields.name}</p>)
 	})
 	return(
 		<div className="fields--test">{rowField}</div>
@@ -75,11 +76,12 @@ function Fields() {
 
 function App() {
 
-	const [data, setData] = useState(null); 
-	const [country, setCountry] = useState()
+	// const [data, setData] = useState(null); 
+	// const [country, setCountry] = useState()
 	const [targetCountry, setTargetCountry] = useState()
 	const [array1, setArray1] = useState([])
 	const [guessedCountry, setGuessedCountry] = useState([])
+	const [temperature, setTemperature] = useState()
 	var filteredData = useCountryList();
 
 	useEffect(()=> {
@@ -96,11 +98,20 @@ function App() {
 		setTargetCountry(filteredData[index])
 		console.log("answer " + JSON.stringify(filteredData[index]))
 		return filteredData[index]
-	}	
+	}
+
+	function getWeather(city){
+		const apiKey = import.meta.env.VITE_WEATHER_REACT_API_KEY
+		const response = fetch(`https://api.weatherapi.com/v1/current.json?q=${city}&key=${apiKey}`)
+						.then(response => response.json())
+						.then(data => {
+							setTemperature(data.current.temp_f)
+						})
+	}
 	
 	const handleCountryChange = (data2) => {
-		setCountry(data2)
-		console.log(filteredData)
+		//setCountry(data2)
+		// console.log(filteredData)
 		var guess = filteredData.find(element => element.name.common === data2);
 		setGuessedCountry(prevArray1 => [...prevArray1, guess])
 		guessedCountry.forEach(field => {
@@ -110,16 +121,19 @@ function App() {
 		});
 		const guessHemisphere = (guess.latlng[0] <= 0) ? "Southern" : "Northern";
 		const targetHemisphere = (targetCountry.latlng[0] <= 0) ? "Southern" : "Northern"
-		// console.log("target guess"+ (guess.latlng[0] == targetCountry.latlng[0]) ? "#34e89e" : "#ee0979")
-		// console.log("actual guess" + guess)
+
 		if (guess.name.common != targetCountry.name.common){
+			// console.log(guess.capital[0])
+			// console.log(import.meta.env.VITE_WEATHER_REACT_API_KEY)
+			//const temp = getWeather(guess.capital[0])
+			// console.log(temp)
 			const test = [
 				{name: guess.name.common, color: "#3494E6"}, 
 				{hemisphere: guessHemisphere, color: (targetHemisphere == guessHemisphere) ? "#34e89e" : "#ee0979"},
 				{continents: guess.continents[0], color: (guess.continents[0] == targetCountry.continents[0]) ? "#34e89e" : "#ee0979"}, 
 				{population: (guess.population < targetCountry.population) ? (Math.trunc(guess.population/1000000) + "M ↑ ") : (Math.trunc(guess.population/1000000)	 + "M ↓ "), color: "#3494E6"},
 				{direction: "E", color: "#3494E6"}, 
-				{temperature: "30.7", color: "#3494E6"}];
+				{temperature: "not working bro on me", color: "#3494E6"}];
 			setArray1(test)
 			//console.log(array1)
 		}else if(guess.name.common == targetCountry.name.common){
@@ -135,9 +149,6 @@ function App() {
 			console.log("not found")
 		}
 	}
-	useEffect(() => {
-
-	  }, []);
 
 	return (
 		<div className="main">
@@ -146,7 +157,7 @@ function App() {
 			<div className="setup">
 				<div className="guess--box">
 					<div className="top--div">
-						<img className='worldImage' src="public/world.png"/>
+						<img className='worldImage' src="/world.png"/>
 						<Fields />
 						<div className="information--grid">
 							<Information hesmiphere="Northern"
