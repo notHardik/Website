@@ -7,9 +7,9 @@ export default function Information(props){
         setArray1(prevArray1 => [...prevArray1, props.array1])
     }, [props.array1])
 
-
     const inception = array1.map((element) => {
         //console.log(element)
+
         const inceptio2 = element.map((fields) => {
             const key = Object.keys(fields)[0]
             return (<p className='grid' key={fields[key]} style={{color: fields.color}}>
@@ -28,7 +28,7 @@ export default function Information(props){
     }
 
     return (
-        <div key={'f'} className=''>
+        <div key={'f'} className='field--layout'>
             {inception}
         </div>
     )

@@ -37,6 +37,12 @@ function InputBox({onCountryChange}){
 		setData("")
 	}
 
+	function giveUp(){
+		onCountryChange("giveUp")
+		setData("Loser")
+		document.getElementById('countryInput').style.visibility = "hidden"
+	}
+
 	//console.log(dataListField);
 	return(
 		<div className='bottom--submit'>
@@ -44,6 +50,8 @@ function InputBox({onCountryChange}){
 			sideLength={15} 
 			borderRadius={1}
 			fill={'#FF1818'}
+			onClick={giveUp}
+			id='fuck'
 			className="hexagon--button"/>
 			<input type='text' className='guessText' id='countryInput'
 			placeholder='Enter Country Name' list="json-datalist"
@@ -92,7 +100,7 @@ function App() {
     
 	const startGame = () => {
 		filteredData = filteredData ? filteredData.filter(item => item.continents && item.continents.length > 0 && 
-		!item.continents.includes('Antarctica') && !item.continents.includes('Oceania') && item.unMember == true) : [];
+		!item.continents.includes('Antarctica') && !item.unMember == true) : [];
 
 		const index = Math.floor(Math.random() * filteredData.length)
 		setTargetCountry(filteredData[index])
@@ -112,15 +120,26 @@ function App() {
 	const handleCountryChange = (data2) => {
 		//setCountry(data2)
 		// console.log(filteredData)
-		var guess = filteredData.find(element => element.name.common === data2);
-		setGuessedCountry(prevArray1 => [...prevArray1, guess])
-		guessedCountry.forEach(field => {
-			if(guess.name.common == field.name.common){
-				guess = null
-			}
-		});
-		const guessHemisphere = (guess.latlng[0] <= 0) ? "Southern" : "Northern";
-		const targetHemisphere = (targetCountry.latlng[0] <= 0) ? "Southern" : "Northern"
+		var guessHemisphere = ""
+		var targetHemisphere = ""
+		if(data2 != "giveUp"){
+			var guess = filteredData.find(element => element.name.common === data2);
+			setGuessedCountry(prevArray1 => [...prevArray1, guess])
+			guessedCountry.forEach(field => {
+				if(guess.name.common == field.name.common){
+					guess = null
+				}
+			});
+			guessHemisphere = (guess.latlng[0] <= 0) ? "Southern" : "Northern";
+			targetHemisphere = (targetCountry.latlng[0] <= 0) ? "Southern" : "Northern"
+		}else{
+			guess = targetCountry
+			setGuessedCountry(prevArray1 => [...prevArray1, targetCountry])
+			guessHemisphere = (guess.latlng[0] <= 0) ? "Southern" : "Northern";
+			targetHemisphere = (targetCountry.latlng[0] <= 0) ? "Southern" : "Northern"
+			setTargetCountry("L")
+		}
+		
 
 		if (guess.name.common != targetCountry.name.common){
 			// console.log(guess.capital[0])
@@ -131,7 +150,7 @@ function App() {
 				{name: guess.name.common, color: "#3494E6"}, 
 				{hemisphere: guessHemisphere, color: (targetHemisphere == guessHemisphere) ? "#34e89e" : "#ee0979"},
 				{continents: guess.continents[0], color: (guess.continents[0] == targetCountry.continents[0]) ? "#34e89e" : "#ee0979"}, 
-				{population: (guess.population < targetCountry.population) ? (Math.trunc(guess.population/1000000) + "M ↑ ") : (Math.trunc(guess.population/1000000)	 + "M ↓ "), color: "#3494E6"},
+				{population: (guess.population < targetCountry.population) ? (Math.trunc(guess.population/1000000) + "M ↑ ") : (Math.trunc(guess.population/1000000) + "M ↓ "), color: "#3494E6"},
 				{direction: "E (algo might not be working)", color: "#3494E6"}, 
 				{temperature: "not working bro on me", color: "#3494E6"}];
 			setArray1(test)
