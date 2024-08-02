@@ -6,18 +6,27 @@ export default function Information(props){
     useEffect(() => {
         setArray1(prevArray1 => [...prevArray1, props.array1])
     }, [props.array1])
-
-    const inception = array1.map((element) => {
-        //console.log(element)
-
-        const inceptio2 = element.map((fields) => {
-            const key = Object.keys(fields)[0]
-            return (<p className='grid' key={fields[key]} style={{color: fields.color}}>
-                {fields[key]}
-                </p>)
+    useEffect(() => {
+        setArray1([])
+    }, [props.restart])
+    var listOfCountry = []
+    var fieldsInCountry = []
+    console.log('arrat len: ' + array1.length)
+    if (!props.restart){
+        listOfCountry = array1.map((element) => {
+        
+            fieldsInCountry = element.map((fields) => {
+                const key = Object.keys(fields)[0]
+                return (<p className='grid' key={fields[key]} style={{color: fields.color}}>
+                    {fields[key]}
+                    </p>)
+            })
+            return (<div className='fields--test' key={element}>{fieldsInCountry}</div>)
         })
-        return (<div className='fields--test' key={element}>{inceptio2}</div>)
-    })
+    }else{
+        return (<div></div>)
+    }
+    
 
     // const fieldInput = props.array1.map((fields)=> {
     //     return (<p className='grid' key={fields[0]}>{fields}</p>)
@@ -29,7 +38,7 @@ export default function Information(props){
 
     return (
         <div key={'f'} className='field--layout'>
-            {inception}
+            {listOfCountry}
         </div>
     )
 }
