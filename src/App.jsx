@@ -55,7 +55,7 @@ function InputBox({onCountryChange}){
 	return(
 		<div className='bottom--submit'>
 			<Hexagon 
-			sideLength={15} 
+			sideLength={25} 
 			borderRadius={1}
 			fill={'#FF1818'}
 			onClick={giveUp}
@@ -71,7 +71,7 @@ function InputBox({onCountryChange}){
 			</datalist>
 			<button className='restart--button' id='restartButton' onClick={restart}>Restart</button>
 			<Hexagon 
-			sideLength={15}
+			sideLength={25}
 			borderRadius={1}
 			fill={'#39ff14'}
 			onClick={handleClick}
@@ -186,9 +186,9 @@ function App() {
 	}
 
 	return (
-		<div className="main">
+		<div className='main'>
 			{/* <h1 className='countryleText'></h1> */}
-			<VaraText className='countryleText' text='Countryle' />
+			<div className='top--25'><VaraText className='countryleText' text='Countryle' /></div>
 			<div className="setup">
 				<div className="guess--box">
 					<div className="top--div">
@@ -204,6 +204,7 @@ function App() {
 						<InputBox onCountryChange={handleCountryChange}/>
 				</div>
 			</div>
+			{/* <div className="bottom--25"></div> */}
 		</div>
 	)
 }

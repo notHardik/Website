@@ -15,10 +15,11 @@ export default function VaraText({ text }) {
       [
         {
           text: text,
-          fontSize: 40,
+          fontSize: 70,
           strokeWidth: .7,
           color: "#27f5b7",
-          duration:2500
+          duration:2500,
+          letterSpacing:0
         },
       ]
     );
