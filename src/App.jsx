@@ -166,8 +166,8 @@ function App() {
 					{hemisphere: guessHemisphere, color: (targetHemisphere == guessHemisphere) ? "#34e89e" : "#ee0979"},
 					{continents: guess.continents[0], color: (guess.continents[0] == targetCountry.continents[0]) ? "#34e89e" : "#ee0979"}, 
 					{population: (guess.population < targetCountry.population) ? (Math.trunc(guess.population/1000000) + "M ↑ ") : (Math.trunc(guess.population/1000000) + "M ↓ "), color: "#3494E6"},
-					{direction: "E (algo might not be working)", color: "#3494E6"}, 
-					{temperature: "not working bro on me", color: "#3494E6"}];
+					{direction: "W.I.P", color: "#3494E6"}, 
+					{temperature: "W.I.P", color: "#3494E6"}];
 				setArray1(test)
 				//console.log(array1)
 			}else if(guess.name.common == targetCountry.name.common){
